@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { ThemeToggle } from "../components/ThemeToggle"; // Import Toggle Component
+import { ThemeToggle } from "../components/ThemeToggle";
 
 export default function Home() {
   return (
