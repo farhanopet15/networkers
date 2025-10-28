@@ -15,8 +15,6 @@ export default function Home() {
               Sistem matchmaking otomatis berbasis lokasi, skill tag, dan ketersediaan. Cocok untuk UMKM, EO, rumah tangga, proyek harian.
             </p>
             <div className="flex gap-3">
-              {/* <Link href="/hire/register" className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 bg-black text-white">
-                Daftarkan lowongan <ArrowRight size={18}/></Link> */}
               <Link href="http://t.me/NettWorkersBot" className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 bg-black text-white">
                 Saya Mencari Karyawan (Telegram)<ArrowRight size={18}/>
               </Link>
