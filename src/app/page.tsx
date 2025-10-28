@@ -20,9 +20,6 @@ export default function Home() {
               <Link href="http://t.me/NettWorkersBot" className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 bg-black text-white">
                 Saya Mencari Karyawan (Telegram)<ArrowRight size={18}/>
               </Link>
-              {/* <Link href="http://t.me/NettWorkersBot" className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 border">
-                Saya Mencari Karyawan (Telegram)<ArrowRight size={18}/>
-              </Link> */}
             </div>
             <p className="mt-3 text-sm dark:text-gray-300 text-gray-500">
               Menemukan Pekerja Cepat Mudah Dan Tepat.

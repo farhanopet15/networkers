@@ -7,12 +7,10 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // UseEffect to prevent mismatch during SSR
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Don't render the toggle until the client has mounted to avoid hydration mismatch
   if (!mounted) {
     return null;
   }
