@@ -5,14 +5,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
 const Schema = z.object({
-  company: z.string().min(2),
-  contactEmail: z.string().email(),
+  id : z.number().optional(),
+  nama_perusahaan : z.string().min(2),
+  email: z.string().email(),
   whatsapp: z.string().min(8),
-  location: z.string().min(2),
-  role: z.string().min(2),
+  lokasi: z.string().min(2),
+  peran_pekerjaan: z.string().min(2),
+  mulai : z.string().optional(),
   skills: z.string().min(2),
-  startDate: z.string().optional(),
-  notes: z.string().optional(),
+  catatan: z.string().optional(),
+  created_at: z.string().optional(),
 });
 
 type FormData = z.infer<typeof Schema>;
@@ -36,7 +38,7 @@ export default function EmployerForm() {
       <div className="rounded-xl border p-6">
         <h3 className="font-semibold mb-2">Terima kasih!</h3>
         <p className="text-sm text-gray-600">
-          Tim kami akan menghubungi Anda sebentar lagi via email/WhatsApp untuk konfirmasi job.
+          Tim kami akan menghubungi Anda lagi via Email/WhatsApp untuk konfirmasi adanya pekerja.
         </p>
       </div>
     );
@@ -47,14 +49,14 @@ export default function EmployerForm() {
       <div>
         <label className="block text-sm mb-1">Nama Perusahaan / Individu</label>
         <input className="w-full rounded-lg border px-3 py-2"
-               {...register("company")} />
-        {!!errors.company && <p className="text-sm text-red-600">{errors.company.message}</p>}
+               {...register("nama_perusahaan")} />
+        {!!errors.nama_perusahaan && <p className="text-sm text-red-600">{errors.nama_perusahaan.message}</p>}
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm mb-1">Email</label>
-          <input className="w-full rounded-lg border px-3 py-2" {...register("contactEmail")} />
-          {!!errors.contactEmail && <p className="text-sm text-red-600">{errors.contactEmail.message}</p>}
+          <input className="w-full rounded-lg border px-3 py-2" {...register("email")} />
+          {!!errors.email && <p className="text-sm text-red-600">{errors.email.message}</p>}
         </div>
         <div>
           <label className="block text-sm mb-1">WhatsApp</label>
@@ -65,15 +67,15 @@ export default function EmployerForm() {
       <div className="grid md:grid-cols-3 gap-4">
         <div>
           <label className="block text-sm mb-1">Lokasi</label>
-          <input className="w-full rounded-lg border px-3 py-2" {...register("location")} />
+          <input className="w-full rounded-lg border px-3 py-2" {...register("lokasi")} />
         </div>
         <div>
           <label className="block text-sm mb-1">Peran / Pekerjaan</label>
-          <input className="w-full rounded-lg border px-3 py-2" {...register("role")} />
+          <input className="w-full rounded-lg border px-3 py-2" {...register("peran_pekerjaan")} />
         </div>
         <div>
           <label className="block text-sm mb-1">Mulai (opsional)</label>
-          <input type="date" className="w-full rounded-lg border px-3 py-2" {...register("startDate")} />
+          <input type="date" className="w-full rounded-lg border px-3 py-2" {...register("mulai")} />
         </div>
       </div>
       <div>
@@ -82,7 +84,7 @@ export default function EmployerForm() {
       </div>
       <div>
         <label className="block text-sm mb-1">Catatan</label>
-        <textarea rows={4} className="w-full rounded-lg border px-3 py-2" {...register("notes")} />
+        <textarea rows={4} className="w-full rounded-lg border px-3 py-2" {...register("catatan")} />
       </div>
 
       <button disabled={isSubmitting}
